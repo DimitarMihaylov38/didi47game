@@ -1,0 +1,196 @@
+body {
+    font-family: Consolas, monospace;
+    font-size: 18px;
+    margin: 0;
+}
+
+.game-section {
+    position: relative;
+}
+
+.game-start,
+.game-over {
+    position: absolute;
+    z-index: 1;
+    width: 70%;
+    background: rgb(235, 253, 153);
+    top: 100px;
+    left: 35%;
+    text-align: center;
+    padding: 30px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.game-over {
+    background: red;
+    color: white;
+}
+
+.game-score {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.game-area {
+    background: linear-gradient(#6ec6ff, #2196f3);
+    width: 100%;
+    height: 93vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.wizard {
+  position: absolute;
+  width: 150px;
+  height: 200px;
+  background: url('images/didiboss3.png') no-repeat center center;
+  background-size: contain;
+  z-index: 10;
+  filter: drop-shadow(0 0 12px rgba(255, 200, 120, 0.6));
+}
+
+.wizard-fire {
+    background: url('images/wizard-fire.png') no-repeat center/cover;
+    filter: brightness(1.4) drop-shadow(0 0 20px orange);
+}
+
+.fire-ball {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: red; /* Временно за тест */
+    border-radius: 50%;
+    z-index: 10;
+}
+
+
+.cloud {
+    position: absolute;
+    width: 100px;
+    height: 60px;
+    background: url('images/cloud.png') no-repeat center/cover;
+    z-index: 0;
+}
+
+.bug {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: url('images/bug.png') no-repeat center/cover;
+}
+
+.hide {
+    display: none;
+}
+
+.bonus-item {
+    position: absolute;
+    width: 180px; /* преди беше 90px */
+    height: 110px; /* преди беше 55px */
+    background: url('images/holiday.png') no-repeat center/contain;
+    background-size: contain;
+    z-index: 20;
+    animation: bonus-float 2s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
+.message {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 0 0 15px #ff69b4;
+    display: none;
+    z-index: 9999;
+    animation: fadeInOut 2s ease-in-out;
+    animation: fadeInOut 3s ease-in-out, glow 1s infinite alternate;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.shoot-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: orange;
+    border: none;
+    color: white;
+    font-size: 22px;
+    padding: 15px 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(255,165,0,0.7);
+    z-index: 999;
+    cursor: pointer;
+}
+.shoot-btn:active {
+    transform: scale(0.95);
+}
+
+.mobile-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 160px;
+    height: 160px;
+    display: grid;
+    grid-template-columns: 50px 60px 50px;
+    grid-template-rows: 50px 60px 50px;
+    justify-items: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.move-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    line-height: 45px;
+    width: 50px;
+    height: 50px;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.move-btn:active {
+    background: rgba(255, 165, 0, 0.7);
+    transform: scale(0.95);
+}
+
+.shoot-btn {
+    position: absolute;
+    bottom: 100px;
+    right: 20px;
+    background: orange;
+    border: none;
+    color: white;
+    font-size: 22px;
+    padding: 15px 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(255,165,0,0.7);
+    z-index: 999;
+    cursor: pointer;
+}
+
+@media (min-width: 800px) {
+    .mobile-controls,
+    .shoot-btn {
+        display: none;
+    }
+}
+
+
+
